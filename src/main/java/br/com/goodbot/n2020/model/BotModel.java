@@ -34,8 +34,8 @@ public class BotModel {
 	public BotModel() {
 	}
 
-	public BotModel(long id_bot, String name, String welcome_msg, String farewell_msg, int downtime, String default_answer,
-			SegmentModel segment, MarcaModel marca) {
+	public BotModel(long id_bot, String name, String welcome_msg, String farewell_msg, int downtime,
+			String default_answer, SegmentModel segment) {
 		super();
 		this.id_bot = id_bot;
 		this.name = name;
@@ -67,9 +67,9 @@ public class BotModel {
 
 	public void setName(String name) {
 		this.name = name;
-    }
+	}
 
-    @Column(name = "welcome_msg")
+	@Column(name = "welcome_msg")
 	@NotNull(message = "welcome_msg obrigatório")
 	@Size(min = 2, max = 40, message = "welcome_msg deve ser entre 2 e 50 caracteres")
 	public String getwelcome_msg() {
@@ -102,8 +102,6 @@ public class BotModel {
 		this.downtime = downtime;
 	}
 
-
-
 	@Column(name = "default_answer")
 	@Size(min = 10, max = 400, message = "default_answer deve ser entre 10 e 400 caracteres")
 	public String getdefault_answer() {
@@ -113,8 +111,8 @@ public class BotModel {
 	public void setdefault_answer(String default_answer) {
 		this.default_answer = default_answer;
 	}
-    
-    @ManyToOne(fetch = FetchType.LAZY)
+
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_SEGMENT", nullable = false)
 	public SegmentModel getSegment() {
 		return segment;
@@ -123,3 +121,4 @@ public class BotModel {
 	public void setSegment(SegmentModel segment) {
 		this.segment = segment;
 	}
+}

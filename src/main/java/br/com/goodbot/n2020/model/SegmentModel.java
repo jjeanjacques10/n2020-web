@@ -21,31 +21,18 @@ import org.springframework.format.annotation.NumberFormat.Style;
 
 @Entity
 @Table(name = "TB_PRODUTO")
-public class ProdutoModel {
+public class SegmentModel {
 
 	private int id_segment;
 	private String name;
-	private String sku;
-	private String descricao;
-	private BigDecimal preco;
-	private String caracteristicas;
-	private CategoriaModel categoria;
-	private MarcaModel marca;
 
-	public ProdutoModel() {
+	public SegmentModel() {
 	}
 
-	public ProdutoModel(int id_segment, String name, String sku, String descricao, BigDecimal preco, String caracteristicas,
-			CategoriaModel categoria, MarcaModel marca) {
+	public SegmentModel(int id_segment, String name) {
 		super();
 		this.id_segment = id_segment;
 		this.name = name;
-		this.sku = sku;
-		this.descricao = descricao;
-		this.preco = preco;
-		this.caracteristicas = caracteristicas;
-		this.categoria = categoria;
-		this.marca = marca;
 	}
 
 	@Id
@@ -53,7 +40,7 @@ public class ProdutoModel {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEGMENT_SEQ")
 	@SequenceGenerator(name = "SEGMENT_SEQ", sequenceName = "SEGMENT_SEQ", allocationSize = 1)
 	public int getId_segment() {
-		return id_segmentid_segment;
+		return id_segment;
 	}
 
 	public void setId_segment(int id_segment) {
@@ -61,12 +48,13 @@ public class ProdutoModel {
 	}
 
 	@Column(name = "NAME")
-	@NotNull(message = "NAME obrigatÃ³rio")
-	@Size(min = 2, max = 50, message = "NAME deve ser entre 2 e 50 caracteres")
+	@NotNull(message = "NAME é obrigatório")
+	@Size(min = 2, max = 50, message = "NAME deve estar entre 2 e 50 caracteres")
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
-    }
+	}
+}
