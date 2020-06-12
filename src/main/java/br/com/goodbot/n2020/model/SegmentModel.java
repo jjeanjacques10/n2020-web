@@ -23,7 +23,7 @@ import org.springframework.format.annotation.NumberFormat.Style;
 @Table(name = "SEGMENTS")
 public class SegmentModel {
 
-	private int id;
+	private Long id;
 	private String name;
 
 	public SegmentModel() {
@@ -34,11 +34,11 @@ public class SegmentModel {
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEGMENT_SEQ")
 	@SequenceGenerator(name = "SEGMENT_SEQ", sequenceName = "SEGMENT_SEQ", allocationSize = 1)
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -26,11 +26,11 @@
 		style="background-color: #0f70b7;">
 		<div
 			class="container d-flex flex-column flex-md-row justify-content-center">
-			<a class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
+			<a class="btn my-2 mx-5 btn-outline-primary" style="color: white;"
 				href="${contextPath}/bot/">Listar Bots</a> <a
-				class="btn my-2 mx-5 btn-outline-primary active "
-				style="color: white;" href="${contextPath}/bot/form?page=addBot">Adicionar
-				Bot</a> <a class="btn my-2 mx-5 btn-outline-primary "
+				class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
+				href="${contextPath}/bot/form?page=addBot">Adicionar Bot</a> <a
+				class="btn my-2 mx-5 btn-outline-primary active"
 				style="color: white;" href="${contextPath}/segment">Segmentos</a>
 		</div>
 	</nav>
@@ -39,50 +39,53 @@
 		<div class="container text-center mt-5 mb-4">
 			<div class="row justify-content-center">
 				<div class="col-md-4">
-					<img src="${contextPath}/images/logo.png" alt="TheGoodBot"
-						class="img-fluid">
+					<img src="${contextPath}/images/logo.png" alt="TheGoodBot" class="img-fluid">
 				</div>
 			</div>
 			<div class="row justify-content-center mt-5">
 				<div class="col-md-4">
-					<p style="color: grey; font-size: 18px">AplicaÃ§Ã£o de
-						gerenciamento dos bots do TheGoodBot N2020 - PS FIAP</p>
+					<p style="color: grey; font-size: 18px">Aplicação de
+						gerenciamento dos segments do TheGoodBot N2020 - PS FIAP</p>
 				</div>
+			</div>
+			<div class="row justify-content-center mt-3">
+				<p>
+					<a class="btn btn-success btn-lg mt-4"
+						href="${contextPath}/segment/form?page=addSegment" role="button">Adicionar
+						novo segmento</a>
 			</div>
 		</div>
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="md-5 mb-5">
-					<form>
-						<div class="form-group row">
-							<label for="name">Nome do Bot</label> <input type="text"
-								class="form-control" id="name" value="${bot.name}" readonly>
+
+
+					<c:forEach items="${segments}" var="segment">
+
+						<div
+							class="col-md-3 mb-5 text-center border rounded-pill mx-3 py-3">
+							<h2>${segment.name}</h2>
+							<p>
+								<form:form action="${contextPath}/segment/${segment.id}"
+									method="delete">
+									<a class="btn btn-primary"
+										href="${contextPath}/segment/${segment.id}" role="button"><i
+										class="fas fa-eye"></i></a>
+									<a class="btn btn-info ml-2"
+										href="${contextPath}/segment/form?page=editSegment&id=${segment.id}"
+										role="button"><i class="fas fa-edit"></i></a>
+									<a class="btn btn-danger ml-2" href="#" role="button"><i
+										class="fas fa-trash"></i> <input type="submit" value="Excluir"
+										class="btn btn-danger ml-2"></a>
+								</form:form>
+
+							</p>
 						</div>
-						<div class="form-group row">
-							<label for="welcome_message">Mensagem de boas vindas</label>
-							<textarea class="form-control" id="mBoasVindas"
-								 readonly>${bot.welcome_message}</textarea>
-						</div>
-						<div class="form-group row">
-							<label for="farewell_message">Mensagem de despedida</label>
-							<textarea class="form-control" id="farewell_message"
-								readonly>${bot.farewell_message}</textarea>
-						</div>
-						<div class="form-group row">
-							<label for="default_answer">Resposta padrão</label>
-							<textarea class="form-control" id="default_answer"
-								 readonly>${bot.default_answer}</textarea>
-						</div>
-						<div class="form-group row mb-4">
-							<label for="tempo">Tempo até que o bot desconecte por
-								ausÃªncia</label> <input type="number" class="form-control" id="downtime"
-								value="${bot.downtime}" readonly>
-						</div>
-						<div class="row">
-							<a class="btn btn-primary btn-lg btn-block"
-								href="${contextPath}/bot">Voltar</a>
-						</div>
-					</form>
+
+					</c:forEach>
+
+
+
 				</div>
 			</div>
 			<hr>
