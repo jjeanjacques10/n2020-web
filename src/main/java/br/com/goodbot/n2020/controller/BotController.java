@@ -33,7 +33,6 @@ public class BotController {
 			@ModelAttribute("botModel") BotModel botModel, Model model) {
 
 		if ("editBot".equals(page)) {
-			System.out.println(id);
 			model.addAttribute("botModel", botRepository.findById(id).get());
 		}
 
@@ -51,15 +50,13 @@ public class BotController {
 	public String findById(@PathVariable("id") long id, Model model) {
 
 		model.addAttribute("bot", botRepository.findById(id).get());
-		return FOLDER+"viewBot";
+		return FOLDER + "viewBot";
 	}
 
 	@PostMapping()
-	public String save(@Valid BotModel botModel, BindingResult bindingResult, RedirectAttributes redirectAttributes,
-			Model model) {
+	public String save(@Valid BotModel botModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
 		if (bindingResult.hasErrors()) {
-
 			return FOLDER + "addBot";
 		}
 
@@ -68,20 +65,19 @@ public class BotController {
 
 		return "redirect:/bot";
 	}
-	
+
 	@PutMapping("/{id}")
-	public String update(@PathVariable("id") long id, @Valid BotModel botModel, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
-		
-		if(bindingResult.hasErrors()) {
-			
-			model.addAttribute("botModel", botRepository.findAll());
+	public String update(@PathVariable("id") long id, @Valid BotModel botModel, BindingResult bindingResult,
+			RedirectAttributes redirectAttributes, Model model) {
+
+		if (bindingResult.hasErrors()) {
 			return FOLDER + "editBot";
 		}
-		
+
 		botModel.setId(id);
 		botRepository.save(botModel);
 		redirectAttributes.addFlashAttribute("messages", "Bot alterado com sucesso!");
-		
+
 		return "redirect:/bot";
 	}
 
@@ -89,7 +85,7 @@ public class BotController {
 	public String deleteById(@PathVariable("id") long id, RedirectAttributes redirectAttributes) {
 
 		botRepository.deleteById(id);
-		redirectAttributes.addFlashAttribute("messages", "Bot excluído com sucesso!");
+		redirectAttributes.addFlashAttribute("messages", "Bot excluï¿½do com sucesso!");
 
 		return "redirect:/bot";
 	}

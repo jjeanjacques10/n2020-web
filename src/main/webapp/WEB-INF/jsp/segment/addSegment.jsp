@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -45,44 +46,35 @@
 			</div>
 			<div class="row justify-content-center mt-5">
 				<div class="col-md-4">
-					<p style="color: grey; font-size: 18px">AplicaÃ§Ã£o de
+					<p style="color: grey; font-size: 18px">Aplicação de
 						gerenciamento dos bots do TheGoodBot N2020 - PS FIAP</p>
 				</div>
 			</div>
 		</div>
+
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="md-5 mb-5">
-					<form>
+					<form:form modelAttribute="segmentModel" action="${contextPath}/segment"
+						method="post">
+						<spring:hasBindErrors name="segmentModel">
+							<div class="alert alert-danger" role="alert">
+								<form:errors path="*" class="has-error" />
+							</div>
+						</spring:hasBindErrors>
 						<div class="form-group row">
-							<label for="name">Nome do Bot</label> <input type="text"
-								class="form-control" id="name" value="${bot.name}" readonly>
+							<label for="nome">Nome do Bot</label>
+							<form:input type="text" path="name" name="name" id="name"
+								class="form-control" maxlength="50" size="50" />
+							<font color="red"><form:errors path="name" /></font><br />
 						</div>
-						<div class="form-group row">
-							<label for="welcome_message">Mensagem de boas vindas</label>
-							<textarea class="form-control" id="mBoasVindas"
-								 readonly>${bot.welcome_message}</textarea>
-						</div>
-						<div class="form-group row">
-							<label for="farewell_message">Mensagem de despedida</label>
-							<textarea class="form-control" id="farewell_message"
-								readonly>${bot.farewell_message}</textarea>
-						</div>
-						<div class="form-group row">
-							<label for="default_answer">Resposta padrão</label>
-							<textarea class="form-control" id="default_answer"
-								 readonly>${bot.default_answer}</textarea>
-						</div>
-						<div class="form-group row mb-4">
-							<label for="tempo">Tempo até que o bot desconecte por
-								ausÃªncia</label> <input type="number" class="form-control" id="downtime"
-								value="${bot.downtime}" readonly>
-						</div>
+			
 						<div class="row">
-							<a class="btn btn-primary btn-lg btn-block"
-								href="${contextPath}/bot">Voltar</a>
+							<a class="btn btn-default btn-lg" href="${contextPath}/segment">Cancelar</a>
+							<button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
 						</div>
-					</form>
+
+					</form:form>
 				</div>
 			</div>
 			<hr>

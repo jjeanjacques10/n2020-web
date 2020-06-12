@@ -32,7 +32,7 @@
 				class="btn my-2 mx-5 btn-outline-primary active "
 				style="color: white;" href="${contextPath}/bot/form?page=addBot">Adicionar
 				Bot</a> <a class="btn my-2 mx-5 btn-outline-primary "
-				style="color: white;" href="${contextPath}/segments">Segmentos</a>
+				style="color: white;" href="${contextPath}/segment">Segmentos</a>
 		</div>
 	</nav>
 
@@ -69,21 +69,22 @@
 							<font color="red"><form:errors path="name" /></font><br />
 						</div>
 						<div class="form-group row">
-							<label for="mBoasVindas">Mensagem de boas vindas</label>
+							<label for="welcome_message">Mensagem de boas vindas</label>
 							<form:textarea class="form-control" path="welcome_message"
 								name="welcome_message" rows="4" cols="100" placeholder="" />
 							<font color="red"><form:errors path="welcome_message" /></font><br />
 						</div>
 						<div class="form-group row">
-							<label for="mDespedida">Mensagem de despedida</label>
+							<label for="farewell_message">Mensagem de despedida</label>
 							<form:textarea class="form-control" path="farewell_message"
 								name="farewell_message" rows="4" cols="100" placeholder="" />
 							<font color="red"><form:errors path="farewell_message" /></font><br />
 						</div>
 						<div class="form-group row">
-							<label for="rPadrao">Resposta padrÃ£o</label>
+							<label for="default_answer">Resposta padrÃ£o</label>
 							<form:textarea class="form-control" path="default_answer"
-								rows="4" cols="100" placeholder="" />
+								id="default_answer" name="default_answer" rows="4" cols="100"
+								placeholder="" />
 							<font color="red"><form:errors path="default_answer" /></font><br />
 						</div>
 						<div class="form-group row mb-4">
