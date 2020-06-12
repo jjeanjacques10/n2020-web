@@ -50,7 +50,7 @@ public class BotController {
 	public String findById(@PathVariable("id") long id, Model model) {
 
 		model.addAttribute("bot", botRepository.findById(id).get());
-		return "viewBot";
+		return FOLDER+"viewBot";
 	}
 
 	@PostMapping()
@@ -72,8 +72,8 @@ public class BotController {
 	public String update(@PathVariable("id") long id, @Valid BotModel botModel, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
 		
 		if(bindingResult.hasErrors()) {
-			model.addAttribute("categorias", botRepository.findAll());
 			
+			model.addAttribute("bot", botRepository.findAll());
 			return FOLDER + "editBot";
 		}
 		

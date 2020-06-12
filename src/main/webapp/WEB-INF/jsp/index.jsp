@@ -76,7 +76,7 @@
 								<a class="btn btn-primary" href="${contextPath}/bot/${bot.id}"
 									role="button"><i class="fas fa-eye"></i></a>
 								<a class="btn btn-info ml-2"
-									href="${contextPath}/bot/form?page=addBot&id=${bot.id}"
+									href="${contextPath}/bot/form?page=editBot&id=${bot.id}"
 									role="button"><i class="fas fa-edit"></i></a>
 								<a class="btn btn-danger ml-2" href="#" role="button"><i
 									class="fas fa-trash"></i> <input type="submit" value="Excluir"
