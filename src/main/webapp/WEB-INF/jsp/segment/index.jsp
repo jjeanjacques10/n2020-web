@@ -39,7 +39,8 @@
 		<div class="container text-center mt-5 mb-4">
 			<div class="row justify-content-center">
 				<div class="col-md-4">
-					<img src="${contextPath}/images/logo.png" alt="TheGoodBot" class="img-fluid">
+					<img src="${contextPath}/images/logo.png" alt="TheGoodBot"
+						class="img-fluid">
 				</div>
 			</div>
 			<div class="row justify-content-center mt-5">
@@ -57,36 +58,35 @@
 		</div>
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="md-5 mb-5">
-
-
-					<c:forEach items="${segments}" var="segment">
-
-						<div
-							class="col-md-3 mb-5 text-center border rounded-pill mx-3 py-3">
-							<h2>${segment.name}</h2>
-							<p>
-								<form:form action="${contextPath}/segment/${segment.id}"
-									method="delete">
-									<a class="btn btn-primary"
-										href="${contextPath}/segment/${segment.id}" role="button"><i
-										class="fas fa-eye"></i></a>
-									<a class="btn btn-info ml-2"
-										href="${contextPath}/segment/form?page=editSegment&id=${segment.id}"
-										role="button"><i class="fas fa-edit"></i></a>
-									<a class="btn btn-danger ml-2" href="#" role="button"><i
-										class="fas fa-trash"></i> <input type="submit" value="Excluir"
-										class="btn btn-danger ml-2"></a>
-								</form:form>
-
-							</p>
-						</div>
-
-					</c:forEach>
 
 
 
-				</div>
+				<c:forEach items="${segments}" var="segment">
+
+					<div
+						class="col-md-3 mb-5 text-center border rounded-pill mx-3 py-3">
+						<h2>${segment.name}</h2>
+						<p>
+							<form:form action="${contextPath}/segment/${segment.id}"
+								method="delete">
+								<a class="btn btn-primary"
+									href="${contextPath}/segment/${segment.id}" role="button"><i
+									class="fas fa-eye"></i></a>
+								<a class="btn btn-info ml-2"
+									href="${contextPath}/segment/form?page=editSegment&id=${segment.id}"
+									role="button"><i class="fas fa-edit"></i></a>
+								<a class="btn btn-danger ml-2" href="#" role="button"><i
+									class="fas fa-trash"></i> <input type="submit" value="Excluir"
+									class="btn btn-danger ml-2"></a>
+							</form:form>
+
+						</p>
+					</div>
+
+				</c:forEach>
+
+
+
 			</div>
 			<hr>
 		</div>

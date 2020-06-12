@@ -34,7 +34,7 @@
 				class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
 				href="${contextPath}/bot/form?page=addBot">Adicionar Bot</a> <a
 				class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
-				href="${contextPath}/segments">Segmentos</a>
+				href="${contextPath}/segment">Segmentos</a>
 		</div>
 	</nav>
 

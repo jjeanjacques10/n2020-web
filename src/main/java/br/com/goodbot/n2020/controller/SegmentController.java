@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.goodbot.n2020.model.SegmentModel;
+import br.com.goodbot.n2020.repository.BotRepository;
 import br.com.goodbot.n2020.repository.SegmentRepository;
 import br.com.goodbot.n2020.repository.SegmentRepository;
 
@@ -29,6 +30,9 @@ public class SegmentController {
 	@Autowired
 	public SegmentRepository segmentRepository;
 
+	@Autowired
+	public BotRepository botRepository;
+
 	@GetMapping("/form")
 	public String open(@RequestParam String page, @RequestParam(required = false) Long id,
 			@ModelAttribute("segmentModel") SegmentModel segmentModel, Model model) {
@@ -36,7 +40,8 @@ public class SegmentController {
 		if ("editSegment".equals(page)) {
 			model.addAttribute("segmentModel", segmentRepository.findById(id).get());
 		}
-
+		
+		model.addAttribute("bots", botRepository.findAll());
 		return FOLDER + page;
 	}
 
@@ -56,9 +61,10 @@ public class SegmentController {
 
 	@PostMapping()
 	public String save(@Valid SegmentModel segmentModel, BindingResult bindingResult,
-			RedirectAttributes redirectAttributes) {
+			RedirectAttributes redirectAttributes, Model model) {
 
 		if (bindingResult.hasErrors()) {
+			model.addAttribute("bots", botRepository.findAll());
 			return FOLDER + "addSegment";
 		}
 

@@ -54,7 +54,8 @@ public class BotController {
 	}
 
 	@PostMapping()
-	public String save(@Valid BotModel botModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+	public String save(@Valid BotModel botModel, BindingResult bindingResult, RedirectAttributes redirectAttributes,
+			Model model) {
 
 		if (bindingResult.hasErrors()) {
 			return FOLDER + "addBot";

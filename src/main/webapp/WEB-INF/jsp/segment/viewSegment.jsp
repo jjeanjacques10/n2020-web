@@ -55,7 +55,7 @@
 				<div class="md-5 mb-5">
 					<form>
 						<div class="form-group row">
-							<label for="name">Nome do Bot</label> <input type="text"
+							<label for="name">Nome do Segmento</label> <input type="text"
 								class="form-control" id="name" value="${segment.name}" readonly>
 						</div>
 						<div class="row">

@@ -68,6 +68,14 @@
 								class="form-control" maxlength="50" size="50" />
 							<font color="red"><form:errors path="name" /></font><br />
 						</div>
+						
+						<div class="form-group">
+                        	<label class="control-label" for="bot">Bot:</label>
+                        
+	                        <form:select path="bot.id">
+	                        	<form:options items="${bots}" itemValue="id" itemLabel="name" />
+	                        </form:select>
+						</div>
 			
 						<div class="row">
 							<a class="btn btn-default btn-lg" href="${contextPath}/segment">Cancelar</a>
