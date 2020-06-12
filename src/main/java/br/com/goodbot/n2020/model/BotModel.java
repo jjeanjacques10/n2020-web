@@ -20,47 +20,45 @@ import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
 @Entity
-@Table(name = "TB_BOT")
+@Table(name = "BOT")
 public class BotModel {
 
-	private long id_bot;
+	private long id;
 	private String name;
-	private String welcome_msg;
-	private String farewell_msg;
+	private String welcome_message;
+	private String farewell_message;
 	private int downtime;
 	private String default_answer;
-	private SegmentModel segment;
 
 	public BotModel() {
+
 	}
 
-	public BotModel(long id_bot, String name, String welcome_msg, String farewell_msg, int downtime,
-			String default_answer, SegmentModel segment) {
+	public BotModel(long id, String name, String welcome_message, String farewell_message, int downtime,
+			String default_answer) {
 		super();
-		this.id_bot = id_bot;
+		this.id = id;
 		this.name = name;
-		this.welcome_msg = welcome_msg;
-		this.farewell_msg = farewell_msg;
+		this.welcome_message = welcome_message;
+		this.farewell_message = farewell_message;
 		this.downtime = downtime;
 		this.default_answer = default_answer;
-		this.segment = segment;
 	}
 
 	@Id
-	@Column(name = "ID_BOT")
+	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BOT_SEQ")
 	@SequenceGenerator(name = "BOT_SEQ", sequenceName = "BOT_SEQ", allocationSize = 1)
-	public long getId_bot() {
-		return id_bot;
+	public long getId() {
+		return id;
 	}
 
-	public void setId_bot(long id_bot) {
-		this.id_bot = id_bot;
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	@Column(name = "name")
-	@NotNull(message = "Nome obrigatÃ³rio")
-	@Size(min = 2, max = 50, message = "NOME deve ser entre 2 e 50 caracteres")
+	@Column(name = "NAME")
+	@NotNull(message = "Nome obrigatório")
 	public String getName() {
 		return name;
 	}
@@ -69,56 +67,42 @@ public class BotModel {
 		this.name = name;
 	}
 
-	@Column(name = "welcome_msg")
-	@NotNull(message = "welcome_msg obrigatÃ³rio")
-	@Size(min = 2, max = 40, message = "welcome_msg deve ser entre 2 e 50 caracteres")
-	public String getwelcome_msg() {
-		return welcome_msg;
+	@Column(name = "WELCOME_MESSAGE")
+	@NotNull(message = "Welcome Message é obrigatório")
+	public String getWelcome_message() {
+		return welcome_message;
 	}
 
-	public void setwelcome_msg(String welcome_msg) {
-		this.welcome_msg = welcome_msg;
+	public void setWelcome_message(String welcome_message) {
+		this.welcome_message = welcome_message;
 	}
 
-	@Column(name = "farewell_msg")
-	@NotNull(message = "farewell_msg obrigatÃ³rio")
-	@Size(min = 10, max = 400, message = "farewell_msg deve ser entre 10 e 400 caracteres")
-	public String getfarewell_msg() {
-		return farewell_msg;
+	@Column(name = "FAREWELL_MESSAGE")
+	@NotNull(message = "FAREWELL Message é obrigatório")
+	public String getFarewell_message() {
+		return farewell_message;
 	}
 
-	public void setfarewell_msg(String farewell_msg) {
-		this.farewell_msg = farewell_msg;
+	public void setFarewell_message(String farewell_message) {
+		this.farewell_message = farewell_message;
 	}
 
-	@Column(name = "downtime")
-	@DecimalMin(value = "0.01", message = "downtime deve ser acima de 0.01")
-	@NumberFormat(style = Style.CURRENCY)
-	public int getdowntime() {
+	@Column(name = "DOWNTIME")
+	public int getDowntime() {
 		return downtime;
 	}
 
-	public void setdowntime(int downtime) {
+	public void setDowntime(int downtime) {
 		this.downtime = downtime;
 	}
 
-	@Column(name = "default_answer")
-	@Size(min = 10, max = 400, message = "default_answer deve ser entre 10 e 400 caracteres")
-	public String getdefault_answer() {
+	@Column(name = "DEFAULT_ANSWER")
+	public String getDefault_answer() {
 		return default_answer;
 	}
 
-	public void setdefault_answer(String default_answer) {
+	public void setDefault_answer(String default_answer) {
 		this.default_answer = default_answer;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID_SEGMENT", nullable = false)
-	public SegmentModel getSegment() {
-		return segment;
-	}
-
-	public void setSegment(SegmentModel segment) {
-		this.segment = segment;
-	}
 }

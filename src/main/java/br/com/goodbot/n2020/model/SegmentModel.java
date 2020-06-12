@@ -20,36 +20,36 @@ import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
 @Entity
-@Table(name = "TB_PRODUTO")
+@Table(name = "SEGMENTS")
 public class SegmentModel {
 
-	private int id_segment;
+	private int id;
 	private String name;
 
 	public SegmentModel() {
 	}
 
-	public SegmentModel(int id_segment, String name) {
+	public SegmentModel(int id, String name) {
 		super();
-		this.id_segment = id_segment;
+		this.id = id;
 		this.name = name;
 	}
 
 	@Id
-	@Column(name = "ID_SEGMENT")
+	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEGMENT_SEQ")
 	@SequenceGenerator(name = "SEGMENT_SEQ", sequenceName = "SEGMENT_SEQ", allocationSize = 1)
 	public int getId_segment() {
-		return id_segment;
+		return id;
 	}
 
-	public void setId_segment(int id_segment) {
-		this.id_segment = id_segment;
+	public void setId_segment(int id) {
+		this.id = id;
 	}
 
 	@Column(name = "NAME")
-	@NotNull(message = "NAME é obrigatório")
-	@Size(min = 2, max = 50, message = "NAME deve estar entre 2 e 50 caracteres")
+	@NotNull(message = "O nome é obrigatório")
+	@Size(min = 2, max = 50, message = "O nome deve estar entre 2 e 50 caracteres")
 	public String getName() {
 		return name;
 	}
