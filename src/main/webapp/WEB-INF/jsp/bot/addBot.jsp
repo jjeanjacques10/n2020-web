@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -50,16 +51,17 @@
 				</div>
 			</div>
 		</div>
-		<spring:hasBindErrors name="botModel">
-			<div class="alert alert-danger" role="alert">
-				<form:errors path="*" class="has-error" />
-			</div>
-		</spring:hasBindErrors>
+
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="md-5 mb-5">
 					<form:form modelAttribute="botModel" action="${contextPath}/bot"
 						method="post">
+						<spring:hasBindErrors name="botModel">
+							<div class="alert alert-danger" role="alert">
+								<form:errors path="*" class="has-error" />
+							</div>
+						</spring:hasBindErrors>
 						<div class="form-group row">
 							<label for="nome">Nome do Bot</label>
 							<form:input type="text" path="name" name="name" id="name"

@@ -33,6 +33,7 @@ public class BotController {
 			@ModelAttribute("botModel") BotModel botModel, Model model) {
 
 		if ("editBot".equals(page)) {
+			System.out.println(id);
 			model.addAttribute("botModel", botRepository.findById(id).get());
 		}
 
@@ -73,7 +74,7 @@ public class BotController {
 		
 		if(bindingResult.hasErrors()) {
 			
-			model.addAttribute("bot", botRepository.findAll());
+			model.addAttribute("botModel", botRepository.findAll());
 			return FOLDER + "editBot";
 		}
 		

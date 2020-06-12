@@ -69,12 +69,12 @@
 								readonly>${bot.farewell_message}</textarea>
 						</div>
 						<div class="form-group row">
-							<label for="default_answer">Resposta padrÃ£o</label>
+							<label for="default_answer">Resposta padrão</label>
 							<textarea class="form-control" id="default_answer"
 								 readonly>${bot.default_answer}</textarea>
 						</div>
 						<div class="form-group row mb-4">
-							<label for="tempo">Tempo atÃ© que o bot desconecte por
+							<label for="tempo">Tempo até que o bot desconecte por
 								ausÃªncia</label> <input type="number" class="form-control" id="downtime"
 								value="${bot.downtime}" readonly>
 						</div>
