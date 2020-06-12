@@ -59,8 +59,6 @@
 		<div class="container">
 			<div class="row justify-content-center">
 
-
-
 				<c:forEach items="${segments}" var="segment">
 
 					<div
@@ -75,17 +73,16 @@
 								<a class="btn btn-info ml-2"
 									href="${contextPath}/segment/form?page=editSegment&id=${segment.id}"
 									role="button"><i class="fas fa-edit"></i></a>
-								<a class="btn btn-danger ml-2" href="#" role="button"><i
-									class="fas fa-trash"></i> <input type="submit" value="Excluir"
-									class="btn btn-danger ml-2"></a>
+								<button type="submit" value="Excluir"
+									class="btn btn-danger ml-2" class="fas fa-trash">
+									<i class="fas fa-trash"></i>
+								</button>
 							</form:form>
 
 						</p>
 					</div>
 
 				</c:forEach>
-
-
 
 			</div>
 			<hr>
