@@ -34,7 +34,7 @@
 				class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
 				href="${contextPath}/bot/form?page=addBot">Adicionar Bot</a> <a
 				class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
-				href="${contextPath}/segments">Segmentos</a>
+				href="${contextPath}/segment">Segmentos</a>
 		</div>
 	</nav>
 
@@ -71,16 +71,16 @@
 						class="col-md-3 mb-5 text-center border rounded-pill mx-3 py-3">
 						<h2>${bot.name}</h2>
 						<p>
-							<form:form action="${contextPath}/bot/${bot.id}"
-								method="delete">
+							<form:form action="${contextPath}/bot/${bot.id}" method="delete">
 								<a class="btn btn-primary" href="${contextPath}/bot/${bot.id}"
 									role="button"><i class="fas fa-eye"></i></a>
 								<a class="btn btn-info ml-2"
 									href="${contextPath}/bot/form?page=editBot&id=${bot.id}"
 									role="button"><i class="fas fa-edit"></i></a>
-								<a class="btn btn-danger ml-2" href="#" role="button"><i
-									class="fas fa-trash"></i> <input type="submit" value="Excluir"
-									class="btn btn-danger ml-2"></a>
+								<button type="submit" value="Excluir"
+									class="btn btn-danger ml-2" class="fas fa-trash">
+									<i class="fas fa-trash"></i>
+								</button>
 							</form:form>
 
 						</p>

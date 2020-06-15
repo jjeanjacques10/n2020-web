@@ -25,9 +25,17 @@ public class SegmentModel {
 
 	private Long id;
 	private String name;
+	private BotModel bot;
 
 	public SegmentModel() {
 
+	}
+
+	public SegmentModel(Long id, String name, BotModel bot) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.bot = bot;
 	}
 
 	@Id
@@ -50,6 +58,16 @@ public class SegmentModel {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_BOT", nullable = true)
+	public BotModel getBot() {
+		return bot;
+	}
+
+	public void setBot(BotModel bot) {
+		this.bot = bot;
 	}
 
 }

@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.goodbot.n2020.model.BotModel;
 import br.com.goodbot.n2020.repository.BotRepository;
+import br.com.goodbot.n2020.repository.SegmentRepository;
 
 @Controller
 @RequestMapping("/bot")
@@ -41,7 +42,7 @@ public class BotController {
 
 	@GetMapping()
 	public String findAll(Model model) {
-		System.out.println(botRepository.findAll());
+		
 		model.addAttribute("bots", botRepository.findAll());
 		return "index";
 	}
@@ -54,7 +55,8 @@ public class BotController {
 	}
 
 	@PostMapping()
-	public String save(@Valid BotModel botModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+	public String save(@Valid BotModel botModel, BindingResult bindingResult, RedirectAttributes redirectAttributes,
+			Model model) {
 
 		if (bindingResult.hasErrors()) {
 			return FOLDER + "addBot";

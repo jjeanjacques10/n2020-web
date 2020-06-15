@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page isErrorPage="true"%>
+<%@ page isErrorPage="true" %>
 <!doctype html>
 <html lang="pt-br">
 
@@ -71,6 +70,14 @@
 							<form:input type="text" class="form-control" id="name"
 								path="name" />
 							<font color="red"><form:errors path="name" /></font><br />
+						</div>
+
+						<div class="form-group">
+							<label class="control-label" for="bot">Bot:</label>
+
+							<form:select path="bot.id">
+								<form:options items="${bots}" itemValue="id" itemLabel="name" />
+							</form:select>
 						</div>
 
 						<div class="row">
