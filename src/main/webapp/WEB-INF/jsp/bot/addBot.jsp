@@ -54,7 +54,7 @@
 
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="md-5 mb-5">
+				<div class="col-md-5 mb-5">
 					<form:form modelAttribute="botModel" action="${contextPath}/bot"
 						method="post">
 						<spring:hasBindErrors name="botModel">
@@ -63,7 +63,7 @@
 							</div>
 						</spring:hasBindErrors>
 						<div class="form-group row">
-							<label for="nome">Nome do Bot</label>
+							<label for="name">Nome do Bot</label>
 							<form:input type="text" path="name" name="name" id="name"
 								class="form-control" maxlength="50" size="50" />
 							<font color="red"><form:errors path="name" /></font><br />
@@ -87,7 +87,7 @@
 								placeholder="" />
 							<font color="red"><form:errors path="default_answer" /></font><br />
 						</div>
-						<div class="form-group row mb-4">
+						<div class="form-group row">
 							<label for="tempo">Tempo até que o bot desconecte por
 								ausÃªncia</label>
 							<form:input type="number" step="1" id="downtime" path="downtime"
@@ -95,8 +95,12 @@
 							<font color="red"><form:errors path="downtime" /></font><br />
 						</div>
 						<div class="row">
-							<a class="btn btn-default btn-lg" href="${contextPath}/bot">Cancelar</a>
 							<button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
+						</div>
+						<br>
+						<div class="row">
+							<a class="btn btn-primary btn-lg btn-block"
+								href="${contextPath}/bot">Voltar</a>
 						</div>
 
 					</form:form>
