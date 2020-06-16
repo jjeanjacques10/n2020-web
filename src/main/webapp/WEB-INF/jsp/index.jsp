@@ -70,6 +70,12 @@
 					<div
 						class="col-md-3 mb-5 text-center border rounded-pill mx-3 py-3">
 						<h2>${bot.name}</h2>
+						<br>
+						<ul class="list-group">
+							<c:forEach items="${bot.segments}" var="segment">
+								<li class="list-group-item">${segment.name}</li>
+							</c:forEach>
+						</ul>
 						<p>
 							<form:form action="${contextPath}/bot/${bot.id}" method="delete">
 								<a class="btn btn-primary" href="${contextPath}/bot/${bot.id}"

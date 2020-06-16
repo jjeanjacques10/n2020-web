@@ -23,6 +23,7 @@ public class BotModel {
 	private String farewell_message;
 	private int downtime;
 	private String default_answer;
+	private List<SegmentModel> segments;
 
 	public BotModel() {
 
@@ -95,7 +96,7 @@ public class BotModel {
 	}
 
 	@Column(name = "DEFAULT_ANSWER")
-	@NotNull(message = "DEFAULT_ANSWER obrigatï¿½rio")
+	@NotNull(message = "DEFAULT_ANSWER obrigatório")
 	@Size(min = 2, max = 40, message = "O DEFAULT_ANSWER deve ser entre 2 e 100 caracteres")
 	public String getDefault_answer() {
 		return default_answer;
@@ -103,6 +104,15 @@ public class BotModel {
 
 	public void setDefault_answer(String default_answer) {
 		this.default_answer = default_answer;
+	}
+
+	@OneToMany(mappedBy = "bot")
+	public List<SegmentModel> getSegments() {
+		return segments;
+	}
+
+	public void setSegments(List<SegmentModel> segments) {
+		this.segments = segments;
 	}
 
 }
