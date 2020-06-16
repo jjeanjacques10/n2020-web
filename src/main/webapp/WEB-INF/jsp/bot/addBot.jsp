@@ -89,7 +89,7 @@
 						</div>
 						<div class="form-group row mb-4">
 							<label for="tempo">Tempo até que o bot desconecte por
-								ausÃªncia</label>
+								ausência</label>
 							<form:input type="number" step="1" id="downtime" path="downtime"
 								name="downtime" class="form-control" />
 							<font color="red"><form:errors path="downtime" /></font><br />

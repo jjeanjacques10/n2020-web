@@ -29,6 +29,9 @@ public class BotController {
 	@Autowired
 	public BotRepository botRepository;
 
+	@Autowired
+	public SegmentRepository segmentRepository;
+
 	@GetMapping("/form")
 	public String open(@RequestParam String page, @RequestParam(required = false) Long id,
 			@ModelAttribute("botModel") BotModel botModel, Model model) {
@@ -36,7 +39,7 @@ public class BotController {
 		if ("editBot".equals(page)) {
 			model.addAttribute("botModel", botRepository.findById(id).get());
 		}
-
+		model.addAttribute("segmentos", segmentRepository.findAll());
 		return FOLDER + page;
 	}
 
@@ -59,6 +62,7 @@ public class BotController {
 			Model model) {
 
 		if (bindingResult.hasErrors()) {
+			model.addAttribute("segmentos", segmentRepository.findAll());
 			return FOLDER + "addBot";
 		}
 
@@ -73,6 +77,7 @@ public class BotController {
 			RedirectAttributes redirectAttributes, Model model) {
 
 		if (bindingResult.hasErrors()) {
+			model.addAttribute("segmentos", segmentRepository.findAll());
 			return FOLDER + "editBot";
 		}
 

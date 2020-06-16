@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -60,28 +60,34 @@
 						</div>
 						<div class="form-group row">
 							<label for="welcome_message">Mensagem de boas vindas</label>
-							<textarea class="form-control" id="mBoasVindas"
-								 readonly>${bot.welcome_message}</textarea>
+							<textarea class="form-control" id="mBoasVindas" readonly>${bot.welcome_message}</textarea>
 						</div>
 						<div class="form-group row">
 							<label for="farewell_message">Mensagem de despedida</label>
-							<textarea class="form-control" id="farewell_message"
-								readonly>${bot.farewell_message}</textarea>
+							<textarea class="form-control" id="farewell_message" readonly>${bot.farewell_message}</textarea>
 						</div>
 						<div class="form-group row">
 							<label for="default_answer">Resposta padrão</label>
-							<textarea class="form-control" id="default_answer"
-								 readonly>${bot.default_answer}</textarea>
+							<textarea class="form-control" id="default_answer" readonly>${bot.default_answer}</textarea>
 						</div>
 						<div class="form-group row mb-4">
 							<label for="tempo">Tempo até que o bot desconecte por
-								ausÃªncia</label> <input type="number" class="form-control" id="downtime"
-								value="${bot.downtime}" readonly>
+								ausÃªncia</label> <input type="number" class="form-control"
+								id="downtime" value="${bot.downtime}" readonly>
+						</div>
+						<div class="form-group row mb-4">
+							<label for="tempo">Segmentos</label>
+							<ul>
+								<c:forEach items="${bot.segments}" var="segment">
+									<li>${segment.name}</li>
+								</c:forEach>
+							</ul>
 						</div>
 						<div class="row">
 							<a class="btn btn-primary btn-lg btn-block"
 								href="${contextPath}/bot">Voltar</a>
 						</div>
+
 					</form>
 				</div>
 			</div>
