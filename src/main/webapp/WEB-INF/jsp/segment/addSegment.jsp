@@ -29,7 +29,7 @@
 			class="container d-flex flex-column flex-md-row justify-content-center">
 			<a class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
 				href="${contextPath}/bot/">Listar Bots</a> <a
-				class="btn my-2 mx-5 btn-outline-primary active "
+				class="btn my-2 mx-5 btn-outline-primary"
 				style="color: white;" href="${contextPath}/bot/form?page=addBot">Adicionar
 				Bot</a> <a class="btn my-2 mx-5 btn-outline-primary "
 				style="color: white;" href="${contextPath}/segment">Segmentos</a>
@@ -54,7 +54,7 @@
 
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="md-5 mb-5">
+				<div class="col-md-5 mb-5">
 					<form:form modelAttribute="segmentModel" action="${contextPath}/segment"
 						method="post">
 						<spring:hasBindErrors name="segmentModel">
@@ -63,25 +63,27 @@
 							</div>
 						</spring:hasBindErrors>
 						<div class="form-group row">
-							<label for="nome">Nome do Bot</label>
+							<label for="name">Nome do Bot</label>
 							<form:input type="text" path="name" name="name" id="name"
 								class="form-control" maxlength="50" size="50" />
 							<font color="red"><form:errors path="name" /></font><br />
 						</div>
 						
-						<div class="form-group">
-                        	<label class="control-label" for="bot">Bot:</label>
-                        
-	                        <form:select path="bot.id">
+						<div class="form-group row">
+							<label for="name">Relacionado com</label>                     
+	                        <form:select path="bot.id" class="form-control">
 	                        	<form:options items="${bots}" itemValue="id" itemLabel="name" />
 	                        </form:select>
 						</div>
 			
 						<div class="row">
-							<a class="btn btn-default btn-lg" href="${contextPath}/segment">Cancelar</a>
 							<button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
 						</div>
-
+						<br>
+						<div class="row">
+							<a class="btn btn-primary btn-lg btn-block"
+								href="${contextPath}/segment	">Voltar</a>
+						</div>
 					</form:form>
 				</div>
 			</div>
