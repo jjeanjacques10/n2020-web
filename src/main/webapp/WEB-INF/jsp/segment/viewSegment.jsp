@@ -28,7 +28,7 @@
 			class="container d-flex flex-column flex-md-row justify-content-center">
 			<a class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
 				href="${contextPath}/bot/">Listar Bots</a> <a
-				class="btn my-2 mx-5 btn-outline-primary active "
+				class="btn my-2 mx-5 btn-outline-primary"
 				style="color: white;" href="${contextPath}/bot/form?page=addBot">Adicionar
 				Bot</a> <a class="btn my-2 mx-5 btn-outline-primary "
 				style="color: white;" href="${contextPath}/segment">Segmentos</a>
@@ -45,7 +45,7 @@
 			</div>
 			<div class="row justify-content-center mt-5">
 				<div class="col-md-4">
-					<p style="color: grey; font-size: 18px">AplicaÃ§Ã£o de
+					<p style="color: grey; font-size: 18px">Aplica��o de
 						gerenciamento dos bots do TheGoodBot N2020 - PS FIAP</p>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 						</div>
 						<div class="row">
 							<a class="btn btn-primary btn-lg btn-block"
-								href="${contextPath}/bot">Voltar</a>
+								href="${contextPath}/segment">Voltar</a>
 						</div>
 					</form>
 				</div>

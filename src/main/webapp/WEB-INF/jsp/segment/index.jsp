@@ -45,7 +45,7 @@
 			</div>
 			<div class="row justify-content-center mt-5">
 				<div class="col-md-4">
-					<p style="color: grey; font-size: 18px">Aplicação de
+					<p style="color: grey; font-size: 18px">Aplica��o de
 						gerenciamento dos segments do TheGoodBot N2020 - PS FIAP</p>
 				</div>
 			</div>

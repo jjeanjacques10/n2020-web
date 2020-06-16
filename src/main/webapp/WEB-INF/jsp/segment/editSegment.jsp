@@ -48,7 +48,7 @@
 			</div>
 			<div class="row justify-content-center mt-5">
 				<div class="col-md-4">
-					<p style="color: grey; font-size: 18px">AplicaÃ§Ã£o de
+					<p style="color: grey; font-size: 18px">Aplica��o de
 						gerenciamento dos bots do TheGoodBot N2020 - PS FIAP</p>
 				</div>
 			</div>
@@ -72,17 +72,23 @@
 							<font color="red"><form:errors path="name" /></font><br />
 						</div>
 
-						<div class="form-group">
-							<label class="control-label" for="bot">Bot:</label>
-
-							<form:select path="bot.id">
-								<form:options items="${bots}" itemValue="id" itemLabel="name" />
-							</form:select>
+						<div class="form-group row">
+							<label for="name">Relacionado com</label>                     
+	                        <form:select path="bot.id" class="form-control">
+	                        	<form:options items="${bots}" itemValue="id" itemLabel="name" />
+	                        </form:select>
 						</div>
+
 
 						<div class="row">
 							<button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
 						</div>
+						<br>
+						<div class="row">
+							<a class="btn btn-primary btn-lg btn-block"
+								href="${contextPath}/segment">Voltar</a>
+						</div>
+						
 					</form:form>
 				</div>
 			</div>

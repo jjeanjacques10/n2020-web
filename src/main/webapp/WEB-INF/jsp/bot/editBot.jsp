@@ -86,6 +86,11 @@
 						<div class="row">
 							<button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
 						</div>
+						<br>
+						<div class="row">
+							<a class="btn btn-primary btn-lg btn-block"
+								href="${contextPath}/bot">Voltar</a>
+						</div>
 					</form:form>
 				</div>
 			</div>
