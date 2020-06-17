@@ -68,7 +68,7 @@
 				<c:forEach items="${bots}" var="bot">
 
 					<div
-						class="col-md-3 mb-5 text-center border rounded-pill mx-3 py-3">
+						class="col-md-3 mb-5 text-center border rounded mx-3 py-3">
 						<h2>${bot.name}</h2>
 						<br>
 						<ul class="list-group">
