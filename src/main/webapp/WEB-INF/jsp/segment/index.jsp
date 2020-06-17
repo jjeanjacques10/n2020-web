@@ -45,7 +45,7 @@
 			</div>
 			<div class="row justify-content-center mt-5">
 				<div class="col-md-4">
-					<p style="color: grey; font-size: 18px">Aplica��o de
+					<p style="color: grey; font-size: 18px">Aplicação de
 						gerenciamento dos segments do TheGoodBot N2020 - PS FIAP</p>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 				<c:forEach items="${segments}" var="segment">
 
 					<div
-						class="col-md-3 mb-5 text-center border rounded-pill mx-3 py-3">
+						class="col-md-3 mb-5 text-center border rounded mx-3 py-3">
 						<h2>${segment.name}</h2>
 						<p>
 							<form:form action="${contextPath}/segment/${segment.id}"

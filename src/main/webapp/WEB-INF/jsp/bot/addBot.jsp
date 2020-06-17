@@ -81,15 +81,14 @@
 							<font color="red"><form:errors path="farewell_message" /></font><br />
 						</div>
 						<div class="form-group row">
-							<label for="default_answer">Resposta padrÃ£o</label>
+							<label for="default_answer">Resposta padrão</label>
 							<form:textarea class="form-control" path="default_answer"
 								id="default_answer" name="default_answer" rows="4" cols="100"
 								placeholder="" />
 							<font color="red"><form:errors path="default_answer" /></font><br />
 						</div>
 						<div class="form-group row">
-							<label for="tempo">Tempo até que o bot desconecte por
-								ausência</label>
+							<label for="tempo">Tempo de inatividade</label>
 							<form:input type="number" step="1" id="downtime" path="downtime"
 								name="downtime" class="form-control" />
 							<font color="red"><form:errors path="downtime" /></font><br />
