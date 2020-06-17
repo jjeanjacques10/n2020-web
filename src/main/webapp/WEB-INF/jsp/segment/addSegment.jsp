@@ -71,7 +71,7 @@
 						
 						<div class="form-group row">
 							<label for="name">Relacionado com</label>                     
-	                        <form:select path="bot.id" class="form-control">
+	                        <form:select path="bot.id" class="form-control custom-select">
 	                        	<form:options items="${bots}" itemValue="id" itemLabel="name" />
 	                        </form:select>
 						</div>
@@ -81,7 +81,7 @@
 						</div>
 						<br>
 						<div class="row">
-							<a class="btn btn-primary btn-lg btn-block"
+							<a class="btn btn-lg btn-block"
 								href="${contextPath}/segment	">Voltar</a>
 						</div>
 					</form:form>

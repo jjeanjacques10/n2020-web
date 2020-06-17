@@ -30,7 +30,7 @@ public class BotModel {
 	}
 
 	public BotModel(long id, String name, String welcome_message, String farewell_message, int downtime,
-			String default_answer) {
+			String default_answer, List<SegmentModel> segments) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -38,6 +38,7 @@ public class BotModel {
 		this.farewell_message = farewell_message;
 		this.downtime = downtime;
 		this.default_answer = default_answer;
+		this.segments = segments;
 	}
 
 	@Id

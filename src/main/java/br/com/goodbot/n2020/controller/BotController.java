@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.goodbot.n2020.model.BotModel;
+import br.com.goodbot.n2020.model.SegmentModel;
 import br.com.goodbot.n2020.repository.BotRepository;
 import br.com.goodbot.n2020.repository.SegmentRepository;
 
@@ -39,13 +40,14 @@ public class BotController {
 		if ("editBot".equals(page)) {
 			model.addAttribute("botModel", botRepository.findById(id).get());
 		}
-		model.addAttribute("segmentos", segmentRepository.findAll());
+
+		model.addAttribute("segments", segmentRepository.findAll());
 		return FOLDER + page;
 	}
 
 	@GetMapping()
 	public String findAll(Model model) {
-		
+
 		model.addAttribute("bots", botRepository.findAll());
 		return "index";
 	}
@@ -62,11 +64,17 @@ public class BotController {
 			Model model) {
 
 		if (bindingResult.hasErrors()) {
-			model.addAttribute("segmentos", segmentRepository.findAll());
+			model.addAttribute("segments", segmentRepository.findAll());
 			return FOLDER + "addBot";
 		}
 
-		botRepository.save(botModel);
+		BotModel bot = botRepository.save(botModel);
+
+		for (SegmentModel segment : botModel.getSegments()) {
+			segment.setBot(bot);
+			segmentRepository.save(segment);
+		}
+
 		redirectAttributes.addFlashAttribute("messages", "Bot cadastrado com sucesso!");
 
 		return "redirect:/bot";
@@ -77,12 +85,19 @@ public class BotController {
 			RedirectAttributes redirectAttributes, Model model) {
 
 		if (bindingResult.hasErrors()) {
-			model.addAttribute("segmentos", segmentRepository.findAll());
+			model.addAttribute("segments", segmentRepository.findAll());
 			return FOLDER + "editBot";
 		}
 
 		botModel.setId(id);
-		botRepository.save(botModel);
+		
+		BotModel bot = botRepository.save(botModel);
+
+		for (SegmentModel segment : botModel.getSegments()) {
+			segment.setBot(bot);
+			segmentRepository.save(segment);
+		}
+		
 		redirectAttributes.addFlashAttribute("messages", "Bot alterado com sucesso!");
 
 		return "redirect:/bot";
@@ -92,7 +107,7 @@ public class BotController {
 	public String deleteById(@PathVariable("id") long id, RedirectAttributes redirectAttributes) {
 
 		botRepository.deleteById(id);
-		redirectAttributes.addFlashAttribute("messages", "Bot excluï¿½do com sucesso!");
+		redirectAttributes.addFlashAttribute("messages", "Bot excluído com sucesso!");
 
 		return "redirect:/bot";
 	}

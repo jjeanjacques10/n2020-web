@@ -32,10 +32,10 @@
 			class="container d-flex flex-column flex-md-row justify-content-center">
 			<a class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
 				href="${contextPath}/bot/">Listar Bots</a> <a
-				class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
-				href="${contextPath}/bot/form?page=addBot">Adicionar Bot</a> <a
-				class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
-				href="${contextPath}/segments">Gerenciar segmentos</a>
+				class="btn my-2 mx-5 btn-outline-primary"
+				style="color: white;" href="${contextPath}/bot/form?page=addBot">Adicionar
+				Bot</a> <a class="btn my-2 mx-5 btn-outline-primary "
+				style="color: white;" href="${contextPath}/segment">Segmentos</a>
 		</div>
 	</nav>
 
@@ -97,21 +97,22 @@
 								path="downtime" />
 							<font color="red"><form:errors path="downtime" /></font><br />
 						</div>
+						<div class="form-group">
+							<label class="control-label" for="segment">Segmentos:</label>
+
+							<form:select multiple="true" path="segments"
+								class="custom-select">
+								<form:options items="${segments}" itemValue="id"
+									itemLabel="name" />
+							</form:select>
+						</div>
 						<div class="row">
 							<button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
 						</div>
-						<div class="form-group row mb-4">
-							<label for="tempo">Segmentos</label>
-							<ul class="list-group">
-								<c:forEach items="${bot.segments}" var="segment">
-									<li class="list-group-item">${segment.name}</li>
-								</c:forEach>
-							</ul>
-						</div>
+
 						<br>
 						<div class="row">
-							<a class="btn btn-primary btn-lg btn-block"
-								href="${contextPath}/bot">Voltar</a>
+							<a class="btn btn-lg btn-block" href="${contextPath}/bot">Voltar</a>
 						</div>
 					</form:form>
 				</div>
