@@ -30,7 +30,7 @@ public class BotModel {
 	}
 
 	public BotModel(long id, String name, String welcome_message, String farewell_message, int downtime,
-			String default_answer) {
+			String default_answer, List<SegmentModel> segments) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -38,6 +38,7 @@ public class BotModel {
 		this.farewell_message = farewell_message;
 		this.downtime = downtime;
 		this.default_answer = default_answer;
+		this.segments = segments;
 	}
 
 	@Id
@@ -53,8 +54,8 @@ public class BotModel {
 	}
 
 	@Column(name = "NAME")
-	@NotNull(message = "Nome obrigat�rio")
-	@Size(min = 2, max = 40, message = "O nome deve ser entre 2 e 50 caracteres")
+	@NotNull(message = "O nome do Bot é obrigatório")
+	@Size(min = 2, max = 40, message = "O nome do Bot deve ter entre 2 e 50 caracteres")
 	public String getName() {
 		return name;
 	}
@@ -64,8 +65,8 @@ public class BotModel {
 	}
 
 	@Column(name = "WELCOME_MESSAGE")
-	@NotNull(message = "Welcome Message � obrigat�rio")
-	@Size(min = 2, max = 40, message = "O WELCOME_MESSAGE deve ser entre 1 e 100 caracteres")
+	@NotNull(message = "O Bot deve ter uma mensagem de boas-vindas")
+	@Size(min = 2, max = 40, message = "A mensagem de boas-vindas devera possuir entre 1 e 100 caracteres")
 	public String getWelcome_message() {
 		return welcome_message;
 	}
@@ -75,8 +76,8 @@ public class BotModel {
 	}
 
 	@Column(name = "FAREWELL_MESSAGE")
-	@NotNull(message = "FAREWELL Message � obrigat�rio")
-	@Size(min = 2, max = 40, message = "O FAREWELL_MESSAGE deve ser entre 1 e 100 caracteres")
+	@NotNull(message = "É preciso uma Mensagem de despedida")
+	@Size(min = 2, max = 40, message = "A Mensagem de despedida deve conter entre 1 e 100 caracteres")
 	public String getFarewell_message() {
 		return farewell_message;
 	}
@@ -86,7 +87,7 @@ public class BotModel {
 	}
 
 	@Column(name = "DOWNTIME")
-	@NotNull(message = "N�o pode ser nulo")
+	@NotNull(message = "Tempo de inatividade não pode ser nulo")
 	public int getDowntime() {
 		return downtime;
 	}
@@ -96,8 +97,8 @@ public class BotModel {
 	}
 
 	@Column(name = "DEFAULT_ANSWER")
-	@NotNull(message = "DEFAULT_ANSWER obrigat�rio")
-	@Size(min = 2, max = 40, message = "O DEFAULT_ANSWER deve ser entre 2 e 100 caracteres")
+	@NotNull(message = "Necessita de Resposta padrão")
+	@Size(min = 2, max = 40, message = "A Resposta padrão deve ser entre 2 e 100 caracteres")
 	public String getDefault_answer() {
 		return default_answer;
 	}

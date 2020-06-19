@@ -93,12 +93,20 @@
 								name="downtime" class="form-control" />
 							<font color="red"><form:errors path="downtime" /></font><br />
 						</div>
+						<div class="form-group">
+							<label class="control-label" for="segment">Segmentos:</label>
+
+							<form:select multiple="true" path="segments" class="custom-select">
+								<form:options items="${segments}" itemValue="id"
+									itemLabel="name" />
+							</form:select>
+						</div>
 						<div class="row">
 							<button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
 						</div>
 						<br>
 						<div class="row">
-							<a class="btn btn-primary btn-lg btn-block"
+							<a class="btn btn-lg btn-block"
 								href="${contextPath}/bot">Voltar</a>
 						</div>
 

@@ -1,8 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page isErrorPage="true" %>
+<%@ page isErrorPage="true"%>
 <!doctype html>
 <html lang="pt-br">
 
@@ -31,10 +32,10 @@
 			class="container d-flex flex-column flex-md-row justify-content-center">
 			<a class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
 				href="${contextPath}/bot/">Listar Bots</a> <a
-				class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
+				class="btn my-2 mx-5 btn-outline-primary" style="color: white;"
 				href="${contextPath}/bot/form?page=addBot">Adicionar Bot</a> <a
 				class="btn my-2 mx-5 btn-outline-primary " style="color: white;"
-				href="${contextPath}/segment">Gerenciar segmentos</a>
+				href="${contextPath}/segment">Segmentos</a>
 		</div>
 	</nav>
 
@@ -48,7 +49,7 @@
 			</div>
 			<div class="row justify-content-center mt-5">
 				<div class="col-md-4">
-					<p style="color: grey; font-size: 18px">Aplica��o de
+					<p style="color: grey; font-size: 18px">Aplicação de
 						gerenciamento dos bots do TheGoodBot N2020 - PS FIAP</p>
 				</div>
 			</div>
@@ -73,22 +74,22 @@
 						</div>
 
 						<div class="form-group row">
-							<label for="name">Relacionado com</label>                     
-	                        <form:select path="bot.id" class="form-control">
-	                        	<form:options items="${bots}" itemValue="id" itemLabel="name" />
-	                        </form:select>
+							<label for="name">Relacionado com</label>
+							<form:select path="bot.id" class="form-control custom-select">
+								<form:options items="${bots}" itemValue="id" itemLabel="name" />
+							</form:select>
 						</div>
 
 
 						<div class="row">
-							<button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
+							<button type="submit" class="btn btn-lg btn-block">Salvar</button>
 						</div>
 						<br>
 						<div class="row">
 							<a class="btn btn-primary btn-lg btn-block"
 								href="${contextPath}/segment">Voltar</a>
 						</div>
-						
+
 					</form:form>
 				</div>
 			</div>
