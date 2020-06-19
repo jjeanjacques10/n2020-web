@@ -54,7 +54,7 @@ public class BotModel {
 	}
 
 	@Column(name = "NAME")
-	@NotNull(message = "O nome do Bot √© obrigat√≥rio")
+	@NotNull(message = "O nome do Bot È obrigatÛrio")
 	@Size(min = 2, max = 40, message = "O nome do Bot deve ter entre 2 e 50 caracteres")
 	public String getName() {
 		return name;
@@ -76,7 +76,7 @@ public class BotModel {
 	}
 
 	@Column(name = "FAREWELL_MESSAGE")
-	@NotNull(message = "√â preciso uma Mensagem de despedida")
+	@NotNull(message = "… preciso uma Mensagem de despedida")
 	@Size(min = 2, max = 40, message = "A Mensagem de despedida deve conter entre 1 e 100 caracteres")
 	public String getFarewell_message() {
 		return farewell_message;
@@ -87,7 +87,7 @@ public class BotModel {
 	}
 
 	@Column(name = "DOWNTIME")
-	@NotNull(message = "Tempo de inatividade n√£o pode ser nulo")
+	@NotNull(message = "Tempo de inatividade n„o pode ser nulo")
 	public int getDowntime() {
 		return downtime;
 	}
@@ -97,8 +97,8 @@ public class BotModel {
 	}
 
 	@Column(name = "DEFAULT_ANSWER")
-	@NotNull(message = "Necessita de Resposta padr√£o")
-	@Size(min = 2, max = 40, message = "A Resposta padr√£o deve ser entre 2 e 100 caracteres")
+	@NotNull(message = "Necessita de Resposta padr„o")
+	@Size(min = 2, max = 40, message = "A Resposta padr„o deve ser entre 2 e 100 caracteres")
 	public String getDefault_answer() {
 		return default_answer;
 	}

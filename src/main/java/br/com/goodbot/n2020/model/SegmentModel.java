@@ -51,7 +51,7 @@ public class SegmentModel {
 	}
 
 	@Column(name = "NAME")
-	@NotNull(message = "Ter nome Ã© obrigatÃ³rio")
+	@NotNull(message = "Ter nome é obrigatório")
 	public String getName() {
 		return name;
 	}
