@@ -63,7 +63,7 @@
 							</div>
 						</spring:hasBindErrors>
 						<div class="form-group row">
-							<label for="name">Nome do Bot</label>
+							<label for="name">Nome do Segmento</label>
 							<form:input type="text" path="name" name="name" id="name"
 								class="form-control" maxlength="50" size="50" />
 							<font color="red"><form:errors path="name" /></font><br />

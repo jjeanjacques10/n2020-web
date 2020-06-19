@@ -82,11 +82,11 @@
 
 
 						<div class="row">
-							<button type="submit" class="btn btn-lg btn-block">Salvar</button>
+							<button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
 						</div>
 						<br>
 						<div class="row">
-							<a class="btn btn-primary btn-lg btn-block"
+							<a class="btn btn-lg btn-block"
 								href="${contextPath}/segment">Voltar</a>
 						</div>
 
