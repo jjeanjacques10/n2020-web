@@ -107,7 +107,7 @@ public class BotController {
 	public String deleteById(@PathVariable("id") long id, RedirectAttributes redirectAttributes) {
 
 		botRepository.deleteById(id);
-		redirectAttributes.addFlashAttribute("messages", "Bot excluÃ­do com sucesso!");
+		redirectAttributes.addFlashAttribute("messages", "Bot excluído com sucesso!");
 
 		return "redirect:/bot";
 	}

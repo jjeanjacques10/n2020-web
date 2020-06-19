@@ -65,7 +65,7 @@
 						<div class="form-group row">
 							<label for="name">Nome do Segmento</label>
 							<form:input type="text" path="name" name="name" id="name"
-								class="form-control" maxlength="50" size="50" />
+								class="form-control" maxlength="40" size="40" />
 							<font color="red"><form:errors path="name" /></font><br />
 						</div>
 						
@@ -82,7 +82,7 @@
 						<br>
 						<div class="row">
 							<a class="btn btn-lg btn-block"
-								href="${contextPath}/segment	">Voltar</a>
+								href="${contextPath}/segment">Voltar</a>
 						</div>
 					</form:form>
 				</div>

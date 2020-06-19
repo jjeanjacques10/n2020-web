@@ -19,7 +19,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.goodbot.n2020.model.SegmentModel;
 import br.com.goodbot.n2020.repository.BotRepository;
 import br.com.goodbot.n2020.repository.SegmentRepository;
-import br.com.goodbot.n2020.repository.SegmentRepository;
 
 @Controller
 @RequestMapping("/segment")
@@ -47,7 +46,7 @@ public class SegmentController {
 
 	@GetMapping()
 	public String findAll(Model model) {
-		System.out.println(segmentRepository.findAll());
+		
 		model.addAttribute("segments", segmentRepository.findAll());
 		return FOLDER + "index";
 	}
@@ -84,7 +83,7 @@ public class SegmentController {
 
 		segmentModel.setId(id);
 		segmentRepository.save(segmentModel);
-		redirectAttributes.addFlashAttribute("messages", "Segment alterado com sucesso!");
+		redirectAttributes.addFlashAttribute("messages", "Segmento alterado com sucesso!");
 
 		return "redirect:/segment";
 	}
@@ -93,7 +92,7 @@ public class SegmentController {
 	public String deleteById(@PathVariable("id") long id, RedirectAttributes redirectAttributes) {
 
 		segmentRepository.deleteById(id);
-		redirectAttributes.addFlashAttribute("messages", "Segment excluÃ­do com sucesso!");
+		redirectAttributes.addFlashAttribute("messages", "Segment excluído com sucesso!");
 
 		return "redirect:/segment";
 	}
