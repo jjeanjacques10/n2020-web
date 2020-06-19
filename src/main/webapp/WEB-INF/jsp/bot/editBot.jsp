@@ -91,8 +91,7 @@
 							<font color="red"><form:errors path="default_answer" /></font><br />
 						</div>
 						<div class="form-group row mb-4">
-							<label for="downtime">Tempo até que o bot desconecte por
-								ausÃªncia</label>
+							<label for="downtime">Tempo de inatividade</label>
 							<form:input type="number" class="form-control" id="downtime"
 								path="downtime" />
 							<font color="red"><form:errors path="downtime" /></font><br />

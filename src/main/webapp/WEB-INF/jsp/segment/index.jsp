@@ -36,6 +36,9 @@
 	</nav>
 
 	<main role="main">
+		<c:if test="${not empty messages}">
+			<h3 class="alert alert-warning">${messages}</h3>
+		</c:if>
 		<div class="container text-center mt-5 mb-4">
 			<div class="row justify-content-center">
 				<div class="col-md-4">
@@ -61,8 +64,7 @@
 
 				<c:forEach items="${segments}" var="segment">
 
-					<div
-						class="col-md-3 mb-5 text-center border rounded mx-3 py-3">
+					<div class="col-md-3 mb-5 text-center border rounded mx-3 py-3">
 						<h2>${segment.name}</h2>
 						<p>
 							<form:form action="${contextPath}/segment/${segment.id}"

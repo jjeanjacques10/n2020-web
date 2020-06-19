@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -88,6 +90,8 @@ public class BotModel {
 
 	@Column(name = "DOWNTIME")
 	@NotNull(message = "Tempo de inatividade não pode ser nulo")
+	@Min(value = 1, message = "Tempo de inatividade deve ser no mínimo 1 segundo")
+    @Max(value = 3600, message = "Tempo de inatividade deve ser no máximo 3600 segundos")
 	public int getDowntime() {
 		return downtime;
 	}

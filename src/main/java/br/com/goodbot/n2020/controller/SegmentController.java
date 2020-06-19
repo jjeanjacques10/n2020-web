@@ -92,7 +92,7 @@ public class SegmentController {
 	public String deleteById(@PathVariable("id") long id, RedirectAttributes redirectAttributes) {
 
 		segmentRepository.deleteById(id);
-		redirectAttributes.addFlashAttribute("messages", "Segment excluído com sucesso!");
+		redirectAttributes.addFlashAttribute("messages", "Segmento excluído com sucesso!");
 
 		return "redirect:/segment";
 	}
