@@ -30,6 +30,13 @@ spring.datasource.password={Adicionar sua senha aqui}
 
 Execute o arquivo **[N2020Application.java](https://github.com/jjeanjacques10/n2020-web/blob/master/src/main/java/br/com/goodbot/n2020/N2020Application.java)**
 
+## Equipe
+
+- Ahalan Bessa Windson – RM 81705 
+- Gabriel Siqueira Petillo – RM 81238 
+- Jean Jacques Nascimento Barros – RM 81524 
+- Vinicius Mota Pereira Silva – RM 80101 
+- Vitor de Menezes Rico – RM 80515
 
 
 ---
